@@ -205,11 +205,12 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">🥇 Leaderboard</h2>
         <div class="content has-text-justified">
+          <p>
+            - The best model, GPT-4o, only solves 26.93% problems in our benchmark, demonstrate the difficulty of our benchmarks.           
+          </p>
           <p align="center">
             <img width="774" alt="image" src="./images/leaderboard.png">
-          </p>
-          <p>
-            Here, we consider the closed-source models, i.e., GPT-3.5-Turbo/GPT-4o from OpenAI, Claude-3.5-Sonnet, Gemini-1.5-Pro, as well as the open-source models, i.e., LLaMA-3.1, Qwen2.5, Qwen2.5-Math, DeepSeek-V2.5. The metric pass@1 is calculated as the average result over 5 run times. We run all evaluations in a laptop with CPU Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz.          
+            Pass Rate and Average Run Time of LLMs on UTMath. We listed the performance of eight large models using PoT(Program of Thoughts) and RCoT methods across a range of metrics. The average run time is calculated based on the problems solved by the PoT or RCoT methods. The efficiency is calculated as: (Avg.Runtime(PoT) - Avg.Runtime(RcoT)) / Avg.Runtime(RcoT).        
           </p>
         </div>
       </div>
@@ -226,29 +227,26 @@
           <p>
             We conducted a comprehensive study with 8 LLMs. Some of our key findings are summarized as follows:
           </p>
-          <p>
-            - The best model, GPT-4o, only solves 26.93% problems in our benchmark, demonstrate the difficulty of our benchmarks.          
-          </p>
           <p>  
             - Modern LLMs perform poorly in Graph Theory, Group Theory, Geometry and Topology.
           </p>
           <p align="center">
             <img width="782" alt="image" src="./images/performance_on_different_problems_categories.png">
+            Performance on Different Problem Categories.(%) Categories are represented by abbreviations. NT: Number Theory; T.: Theory; DM: Discrete Mathematics; CM: Combinatorial Mathematics; GT: Geometry and Topology; PSE: Polynomial and Series Expansions; SN: Special Numbers; FL: Formal Languages.
           </p>
           <p>  
-            - With RCoT, 7 of 8 evaluated LLMs generated more efficient solutions, with most models achieving higher scores.
-          </p>
-          <p>  
-            - RCoT can significantly improve the pass@k performance of LLMs. 
+            - RCoT can significantly improve the pass@k performance of LLMs. With RCoT, 7 of 8 evaluated LLMs generated more efficient solutions, with most models achieving higher scores.
           </p>
           <p>  
             <img width="782" alt="image" src="./images/pass_k.png">
+            Performance comparison of models across PoT and RCoT tasks at different pass@k levels.
           </p>
           <p>  
             - The quality of reasoning significantly impacts the accuracy and efficiency of the model's final solution.
           </p>
           <p>  
             <img width="782" alt="image" src="./images/self-reasoning.png">
+            Performance comparison between self-reasoning and using GPT-4o reasoning for coding across different models. The results show that models perform better when relying on GPT-4o's reasoning output.
           </p>
         </div>
       </div>
