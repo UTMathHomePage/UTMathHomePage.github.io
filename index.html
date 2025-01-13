@@ -56,19 +56,23 @@
             via Reasoning-to-Coding Thoughts</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">Bo Yang<sup>1</sup>,</span>
-            <span class="author-block">Qingping Yang,</span>
-            <span class="author-block">Runtao Liu<sup>2</sup>,</span>
+            <span class="author-block">Qingping Yang<sup>2</sup>,</span>
+            <span class="author-block">Yingwei Ma<sup>2</sup>,</span>
+            <span class="author-block">Runtao Liu<sup>3</sup>,</span>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>South China University of Technology,</span>
-            <span class="author-block"><sup>2</sup>Hong Kong University of Science and Technology</span>
-            
+            <span class="author-block"><sup>2</sup>ReasonMind,</span>
+            <span class="author-block"><sup>3</sup>Hong Kong University of Science and Technology</span>
           </div>
           <div class="is-size-6 publication-authors">
             <span class="author-block">sdyangbo02 [at] mail [dot] scut [dot] edu [dot] cn </span>
           </div>
           <div class="is-size-6 publication-authors">
             <span class="author-block">qingping95 [at] gmail [dot] com </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block">yingwei [dot] ywma [at] gmail [dot] com </span>
           </div>
           <div class="is-size-6 publication-authors">
             <span class="author-block">runtao219 [at] gmail [dot] com </span>
@@ -129,19 +133,21 @@
     <div class="content has-text-justified">
   <p align="center">
     <img alt="image" src="./images/overview.png">
+    <img alt="image" src="./images/Benchmark_Construction.png">
   </p>
   <p><i>
-    UTMath is a rigorous and expansive benchmark designed to evaluate the mathematical reasoning abilities of Large Language Models (LLMs), with an average of <strong>68 test cases</strong> per problem to ensure that the model <strong> solves the problem</strong> rather than simply memorizing the answers.
+    UTMath is a <strong>cutting-edge</strong> and comprehensive benchmark designed to evaluate the mathematical reasoning abilities of Large Language Models. It consists of <strong>1,053 problems</strong>, each with an average of <strong>68 test cases</strong>, ensuring that models <strong>genuinely solve the problems</strong> rather than merely recalling memorized answers.
   </i></p>
   <p><i>
     The Reasoning-to-Coding of Thoughts (RCoT) approach complements the UTMath Benchmark by encouraging LLMs to engage in explicit reasoning prior to generating code. RCoT significantly improves the efficiency and effectiveness of the solution, suggesting that it encourages the model to <strong>reason critically and find more efficient solutions</strong>.
   </i></p>
   
+  
   <ul>
     <li><b>⚡️Multiple Case Validation</b>: Instead of using single cases that can be memorized, our questions are sequence-based, allowing numerous cases for validating true understanding.</li>
-    <li><b>🔧True Reasoning Evaluation</b>: Hard cases and runtime metrics help filter memorization and compare solution efficiency, precisely assessing reasoning abilities.</li>
-    <li><b>🏆Code Output Evaluation</b>: We require LLMs to output code, focusing on reasoning rather than direct answers, to better reflect their reasoning skills.</li>
-    <li><b>🌐Observation of Reasoning Process</b>: By mandating code implementation, we can observe and validate the LLM's reasoning process, not just the final answer.</li>
+    <li><b>🔧Code Output</b>: UTMath requires large models to solve cases by generating code, aiming for general solutions rather than problem-specific ones, reflecting a closer alignment with intelligence.</li>
+    <li><b>🏆Enhanced Reasoning</b>: Emphasizing reasoning allows large models to focus more on improving the quality of reasoning, thereby delivering higher-quality and more efficient solutions.</li>
+    <li><b>🌐Modularity</b>: By separating reasoning from implementation, it becomes possible to control variables and mitigate the impact of differences in reasoning and coding capabilities across various large models.</li>
   </ul>
   </div>
   </div>
@@ -152,6 +158,7 @@
     <div class="content has-text-justified">
       <p><b>[2024/11]</b>🚀🚀🚀: We released our <b>code</b>📝
       <p><b>[2024/11]</b>🚀🚀🚀: We released our benchmark <a href="https://github.com/UTMathGroup/UTMath/tree/main">UTMath</a>.</p>
+      <p><b>[2025/01]</b>🚀🚀🚀: UTMath has already received over 390 downloads on Hugging Face.</p>
     </div>
   </div>
 </section>
@@ -191,10 +198,10 @@
         <div class="content has-text-justified">
           <p>
             The evaluation of mathematical reasoning capabilities is essential for advancing Artificial General Intelligence (AGI). 
-            While Large Language Models (LLMs) have shown impressive performance in solving mathematical problems, existing benchmarks such as GSM8K and MATH present limitations, including narrow problem definitions with specific numbers and reliance on predetermined rules that hinder accurate assessments of reasoning and adaptability. 
-            This paper introduces the UTMath Benchmark, which robustly evaluates the models through extensive unit tests. It consists of 1,053 problems across 9 mathematical domains, with over 68 test cases per problem.
-            We propose an innovative evaluation framework inspired by unit testing in software development, focusing on both accuracy and reliability of results. 
-            Furthermore, we introduce the Reasoning-to-Coding of Thoughts (RCoT) approach, which encourages LLMs to perform explicit reasoning before generating code, leading to generating more advanced solution and improved performance. Furthermore, we are releasing not only the UTMath benchmark but also the UTMath-Train training dataset (more than 70k samples), to support the community in further exploring mathematical reasoning.          </p>
+            While Large Language Models (LLMs) have shown impressive performance in solving mathematical problems, existing benchmarks such as GSM8K and MATH present limitations, including narrow problem definitions with specific numbers and reliance on predetermined rules that hinder accurate assessments of reasoning and generality. 
+            This paper introduces the UTMath Benchmark, a robust evaluation framework designed to assess LLMs through extensive unit tests, with a focus on both the accuracy and generality of model responses. The benchmark comprises 1,053 cutting-edge problems spanning nine mathematical domains, with an average of 68 test cases per problem.
+            Furthermore, we present the Reasoning-to-Coding of Thoughts (RCoT) approach, which encourages LLMs to engage in explicit reasoning prior to code generation, thereby facilitating the production of more sophisticated solutions and enhancing overall performance and efficiency. Furthermore, we also release the UTMath-Train training dataset (more than 70k samples), to support the community in further exploring mathematical reasoning.
+          </p>
         </div>
       </div>
     </div>
@@ -216,7 +223,64 @@
           </p>
           <p align="center">
             <img width="774" alt="image" src="./images/leaderboard.png">
-            Pass Rate and Average Run Time of LLMs on UTMath. We listed the performance of eight large models using PoT(Program of Thoughts) and RCoT methods across a range of metrics. The average run time is calculated based on the problems solved by the PoT or RCoT methods. The efficiency is calculated as: (Avg.Runtime(PoT) - Avg.Runtime(RcoT)) / Avg.Runtime(RcoT).        
+            Pass Rate and Average Run Time of LLMs on UTMath. We listed the performance of eight large models using PoT(Program of Thoughts) and RCoT methods across a range of metrics. For o1-mini and o1-preview only Pass@1 data is currently available due to resource constraints. The average run time is calculated based on the problems solved by the PoT or RCoT methods. The efficiency is calculated as: (Avg.Runtime(PoT) - Avg.Runtime(RcoT)) / Avg.Runtime(RcoT).        
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">🚠 Generation Pipeline</h2>
+        <div class="content has-text-justified">
+          <p>
+            <li>The benchmark comprises 1,053 cutting-edge problems spanning nine mathematical domains, with an average of 68 test cases per problem.</li>          
+          </p>
+          <p align="center">
+            <img alt="image" src="./images/Benchmark_Construction.png">
+            UTMath generation pipeline.After downloading 23,238 Principle Sequences from OEIS and cleaning the data, 1,053 usable sequences were obtained. Descriptions were standardized by adding background information and improving readability (highlighted in green). Hard cases were introduced to enhance discriminative capability, including terms from later positions to prevent simplistic algorithms from passing.        
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">📋 Dataset Statistics</h2>
+        <div class="content has-text-justified">
+          <p>
+            <li>The benchmark comprises 1,053 cutting-edge problems spanning nine mathematical domains, with an average of 68 test cases per problem.</li>          
+          </p>
+          <p align="center">
+            <img alt="image" src="./images/Dataset_Statistics.png">
+            Comparison between UTMath and other benchmarks. UTMath offers a cutting-edge benchmark with a comprehensive set of 1,053 problems across multiple mathematical domains, providing a more accurate evaluation of LLMs' mathematical reasoning capabilities.        
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">📖 Case Study</h2>
+        <div class="content has-text-justified">
+          <p>
+            <li>This is a qualitative analysis case study of UTMath and RCoT.</li>          
+          </p>
+          <p align="center">
+            <img alt="image" src="./images/Case_Study.png">
+            GPT-4o solves UTMath_948 by the PoT method, by the RCoT method, respectively. PoT simply performs brute-force solving, while RCoT involves deeper reasoning through Case merging after a classification discussion and the application of Euler's formula, providing a solution with lower time complexity.        
           </p>
         </div>
       </div>
